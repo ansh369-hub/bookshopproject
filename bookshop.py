@@ -1,30 +1,30 @@
-# CREATE DATABASE BookStore;
+CREATE DATABASE BookStore;
 
-# USE BookStore;
+USE BookStore;
 
-# CREATE TABLE books_stock (
-# book_id INT PRIMARY KEY,
-# title VARCHAR(100),
-# author VARCHAR(100),
-# price DECIMAL(10, 2),
-# stock INT default 0);
+CREATE TABLE books_stock (
+book_id INT PRIMARY KEY,
+title VARCHAR(100),
+author VARCHAR(100),
+price DECIMAL(10, 2),
+stock INT default 0);
 
 
-# CREATE TABLE purchase_book (
-# purchase_id INT PRIMARY KEY,
-# book_id INT,
-# quantity INT,
-# purchase_date DATE,
-# total_cost_price decimal(10,2),
-# FOREIGN KEY (book_id) REFERENCES books_stock(book_id));
+CREATE TABLE purchase_book (
+purchase_id INT PRIMARY KEY,
+book_id INT,
+quantity INT,
+purchase_date DATE,
+total_cost_price decimal(10,2),
+FOREIGN KEY (book_id) REFERENCES books_stock(book_id));
 
-# CREATE TABLE book_sales (
-# sale_id INT PRIMARY KEY,
-# book_id INT,
-# quantity INT,
-# sale_date DATE,
-# total_selling_price DECIMAL(10, 2),
-# FOREIGN KEY (book_id) REFERENCES books_stock(book_id));
+CREATE TABLE book_sales (
+sale_id INT PRIMARY KEY,
+book_id INT,
+quantity INT,
+sale_date DATE,
+total_selling_price DECIMAL(10, 2),
+FOREIGN KEY (book_id) REFERENCES books_stock(book_id));
 
 
 import mysql.connector
